@@ -24,7 +24,7 @@ class botinstance:
         pyautogui.write('BBCB1A147', interval=0.25)
         time.sleep(5)
         pyautogui.hotkey('enter')
-        pyautogui.write('RAP33P', interval=0.25)
+        pyautogui.write('RAP34P', interval=0.25)
         pyautogui.hotkey('enter')
         time.sleep(15)
     
@@ -38,11 +38,12 @@ class botinstance:
 
 
     def main(botinstance):
-    
+        result = subprocess.Popen(
+            ["gio", "mount", "google-drive://kanika.s2019bos@srisriuniversity.edu.in/"], stderr=subprocess.PIPE, text=True)
         file = open('pagesource.txt', 'r')
         file_content = file.read()
         videoid_list = file_content.split()
-
+	
         while(True):
             botinstance.login()
 
@@ -66,7 +67,7 @@ class botinstance:
                     pyautogui.click(1285, 430)
                     time.sleep(1)
                     pyautogui.hotkey('ctrl','winleft','r')
-                    time.sleep(4000)
+                    time.sleep(1800)
                     pyautogui.hotkey('ctrl', 'winleft', 'f')
                     time.sleep(10)
                     pyautogui.press('f11')
@@ -89,4 +90,4 @@ class botinstance:
 
 
 botinstance().main()
-
+# gio mount google-drive://kanika.s2019bos@srisriuniversity.edu.in/
